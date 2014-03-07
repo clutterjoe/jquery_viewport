@@ -1,4 +1,4 @@
-jquery_viewport
+##jquery_viewport
 ===============
 Check if an element is entirely in the viewport, partially in the viewport, 
 entirely out of the viewport; if is above, below, left, or right of the 
@@ -7,7 +7,7 @@ viewport; or if top, bottom, left or right intersects the viewport.
 This plugin creates a series of pseudoclasses you can add to your jQuery 
 selectors.
 
-For example $("img:below-the-fold").something()
+**For example $("img:below-the-fold").something()**
 
 Any part of the element is visible.
 :in-viewport-partial
