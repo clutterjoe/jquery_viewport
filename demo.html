@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Viewport Selectors Demo</title>
+
+<style type='text/css'>
+.box {
+  display:block;
+  float:left;
+  margin:20px;
+  padding:5px;
+  min-height:150px;
+  min-width:150px;
+  border:1px solid black;
+  background-color:#ebebeb;
+}
+.box .data span {
+  display:inline-block;
+  padding:3px;
+}
+.box .data .partial {
+  opacity:0.5;
+}
+.box .data .total {
+  font-weight: bold;
+}
+.box .data .intersect-top {
+  color:#c00;
+}
+.box .data .intersect-right {
+  color:#0c0;
+}
+.box .data .intersect-bottom {
+  color:#00c;
+}
+.box .data .intersect-left {
+  color:#990;
+}
+</style>
+
+
+<script type='text/javascript' src='//code.jquery.com/jquery-2.1.0.js'></script>
+<script src="jquery.viewport.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+$(document).ready(function() {
+    $(window).on('scroll resize', function() {
+//      console.log('partial', $('div:in-viewport').length);
+      $('div', $('div.box')).html('');
+      $('div.box:in-viewport-partial').each(function() {
+        $('.data', $(this)).append('<span class="partial">partial</span>');
+      });
+      $('div.box:in-viewport-total').each(function() {
+        $('.data', $(this)).append('<span class="total">total</span>');
+      });
+      $('div.box:intersect-viewport-top').each(function() {
+        $('.data', $(this)).append('<span class="intersect-top">top</span>');
+      });
+      $('div.box:intersect-viewport-right').each(function() {
+        $('.data', $(this)).append('<span class="intersect-right">right</span>');
+      });
+      $('div.box:intersect-viewport-bottom').each(function() {
+        $('.data', $(this)).append('<span class="intersect-bottom">bottom</span>');
+      });
+      $('div.box:intersect-viewport-left').each(function() {
+        $('.data', $(this)).append('<span class="intersect-left">left</span>');
+      });
+    });
+    $(window).trigger('scroll');
+    $(window).trigger('resize');
+});
+</script>
+
+
+</head>
+
+<body>
+<body>
+Scroll and resize the window to show which &lt;div&gt;s are in, out, and only partially viewable in the viewport.
+<div style="width:1500px">
+<div class="box d1">Div 1<div class="data"></div></div>
+<div class="box d2">Div 2<div class="data"></div></div>
+<div class="box d3">Div 3<div class="data"></div></div>
+<div class="box d4">Div 4<div class="data"></div></div>
+<div class="box d5">Div 5<div class="data"></div></div>
+<div class="box d1">Div 6<div class="data"></div></div>
+<div class="box d2">Div 7<div class="data"></div></div>
+<div class="box d3">Div 8<div class="data"></div></div>
+<div class="box d4">Div 9<div class="data"></div></div>
+<div class="box d5">Div 10<div class="data"></div></div>
+<div class="box d1">Div 11<div class="data"></div></div>
+<div class="box d2">Div 12<div class="data"></div></div>
+<div class="box d3">Div 13<div class="data"></div></div>
+<div class="box d4">Div 14<div class="data"></div></div>
+<div class="box d5">Div 15<div class="data"></div></div>
+<div class="box d1">Div 16<div class="data"></div></div>
+<div class="box d2">Div 17<div class="data"></div></div>
+<div class="box d3">Div 18<div class="data"></div></div>
+<div class="box d4">Div 19<div class="data"></div></div>
+<div class="box d5">Div 20<div class="data"></div></div>
+<div class="box d1">Div 21<div class="data"></div></div>
+<div class="box d2">Div 22<div class="data"></div></div>
+<div class="box d3">Div 23<div class="data"></div></div>
+<div class="box d4">Div 24<div class="data"></div></div>
+<div class="box d5">Div 25<div class="data"></div></div>
+<div class="box d1">Div 26<div class="data"></div></div>
+<div class="box d2">Div 27<div class="data"></div></div>
+<div class="box d3">Div 28<div class="data"></div></div>
+<div class="box d4">Div 29<div class="data"></div></div>
+<div class="box d5">Div 30<div class="data"></div></div>
+</div>
+
+</body>
+</html>
