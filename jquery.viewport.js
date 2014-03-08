@@ -9,7 +9,7 @@
  * Project home:
  *  http://www.appelsiini.net/projects/viewport
  *
- * Forked 2014
+ * Forked 2014, Thanks Mika!
  *
  * Copyright (c) 2014 Joe Crespo
  *
@@ -21,7 +21,7 @@
  */
 (function($) {
 
-  $.viewport = {
+  $.viewport_pseudoclass = {
     belowfold: function(element, settings) {
       var fold = $(window).height() + $(window).scrollTop();
       return fold <= $(element).offset().top - settings.threshold;
@@ -75,75 +75,75 @@
 
     // Any part of the element is visible.
     "in-viewport-partial": function(a, i, m) {
-      return $.viewport.inviewportpartial(a, {threshold : 0});
+      return $.viewport_pseudoclass.inviewportpartial(a, {threshold : 0});
     },
     // All parts of the element are visible.
     "in-viewport-total": function(a, i, m) {
-      return $.viewport.inviewporttotal(a, {threshold : 0});
+      return $.viewport_pseudoclass.inviewporttotal(a, {threshold : 0});
     },
     // The top of the element intersects with the edge of the viewport.
     "intersect-viewport-top": function(a, i, m) {
-      return $.viewport.intersecttop(a, {threshold : 0});
+      return $.viewport_pseudoclass.intersecttop(a, {threshold : 0});
     },
     // The right of the element intersects with the edge of the viewport.
     "intersect-viewport-right": function(a, i, m) {
-      return $.viewport.intersectright(a, {threshold : 0});
+      return $.viewport_pseudoclass.intersectright(a, {threshold : 0});
     },
     // The bottom of the element intersects with the edge of the viewport.
     "intersect-viewport-bottom": function(a, i, m) {
-      return $.viewport.intersectbottom(a, {threshold : 0});
+      return $.viewport_pseudoclass.intersectbottom(a, {threshold : 0});
     },
     // The left of the element intersects with the edge of the viewport.
     "intersect-viewport-left": function(a, i, m) {
-      return $.viewport.intersectleft(a, {threshold : 0});
+      return $.viewport_pseudoclass.intersectleft(a, {threshold : 0});
     },
 
     // Any part of the element is NOT inside of the viewport.
     "out-viewport-partial": function(a, i, m) {
-      return !$.viewport.inviewporttotal(a, {threshold : 0});
+      return !$.viewport_pseudoclass.inviewporttotal(a, {threshold : 0});
     },
     // All parts of the element are NOT inside of the viewport.
     "out-viewport-total": function(a, i, m) {
-      return !$.viewport.inviewportpartial(a, {threshold : 0});
+      return !$.viewport_pseudoclass.inviewportpartial(a, {threshold : 0});
     },
     // The element is completely above the viewport.
     "above-viewport": function(a, i, m) {
-      return $.viewport.abovefold(a, {threshold : 0});
+      return $.viewport_pseudoclass.abovefold(a, {threshold : 0});
     },
     // The element is completely to the right of the viewport.
     "right-of-viewport": function(a, i, m) {
-      return $.viewport.rightofviewport(a, {threshold : 0});
+      return $.viewport_pseudoclass.rightofviewport(a, {threshold : 0});
     },
     // The element is completely below the viewport.
     "below-viewport": function(a, i, m) {
-      return $.viewport.belowfold(a, {threshold : 0});
+      return $.viewport_pseudoclass.belowfold(a, {threshold : 0});
     },
     // The element is completely to the left of the viewport.
     "left-of-viewport": function(a, i, m) {
-      return $.viewport.leftofviewport(a, {threshold : 0});
+      return $.viewport_pseudoclass.leftofviewport(a, {threshold : 0});
     },
 
     // Legacy pseudoclasses.
     "below-the-fold": function(a, i, m) {
-      return $.viewport.belowfold(a, {threshold : 0});
+      return $.viewport_pseudoclass.belowfold(a, {threshold : 0});
     },
     "overlaps-fold": function(a, i, m) {
-      return $.viewport.overlapsfold(a, {threshold : 0});
+      return $.viewport_pseudoclass.overlapsfold(a, {threshold : 0});
     },
     "above-the-top": function(a, i, m) {
-      return $.viewport.abovefold(a, {threshold : 0});
+      return $.viewport_pseudoclass.abovefold(a, {threshold : 0});
     },
     "overlaps-top": function(a, i, m) {
-      return $.viewport.intersecttop(a, {threshold : 0});
+      return $.viewport_pseudoclass.intersecttop(a, {threshold : 0});
     },
     "left-of-screen": function(a, i, m) {
-      return $.viewport.leftofviewport(a, {threshold : 0});
+      return $.viewport_pseudoclass.leftofviewport(a, {threshold : 0});
     },
     "right-of-screen": function(a, i, m) {
-      return $.viewport.rightofviewport(a, {threshold : 0});
+      return $.viewport_pseudoclass.rightofviewport(a, {threshold : 0});
     },
     "in-viewport": function(a, i, m) {
-      return $.viewport.inviewportpartial(a, {threshold : 0});
+      return $.viewport_pseudoclass.inviewportpartial(a, {threshold : 0});
     }
   });
 
